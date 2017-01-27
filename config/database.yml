@@ -1,0 +1,31 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  reconnect: false
+  host: localhost
+  port: 3306
+
+development:
+  <<: *default
+  database: smsgo_dev
+  username: root
+  password:
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: smsgo_test
+  username: root
+  password:
+
+production:
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  reconnect: true
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>

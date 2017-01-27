@@ -1,0 +1,11 @@
+h1 Send Message
+= simple_form_for @message do |f|
+  / = text_field_tag :user, nil, placeholder: 'Type name, email or phone number'
+  / = f.hidden_field :user_id
+  = f.association :user, hint: "While in test mode you can only send message to registered number"
+  br/
+  = f.input :from, placeholder: 'From...'
+  br/
+  = f.input :body, placeholder: 'Type your SMS here...', input_html: {cols: 50, rows: 15}, hint: "If you send more than 160 characters then your message will be broken down in to chunks of 153 characters before being sent to the recipient's handset."
+  br/
+  = f.button :submit, 'SEND'
