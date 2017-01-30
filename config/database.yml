@@ -23,9 +23,9 @@ test:
   password:
 
 production:
-  adapter: mysql2
+  adapter: pg
   pool: 5
   timeout: 5000
   encoding: utf8
   reconnect: true
-  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
