@@ -23,9 +23,4 @@ test:
   password:
 
 production:
-  adapter: pg
-  pool: 5
-  timeout: 5000
-  encoding: utf8
-  reconnect: true
   url: <%= ENV['DATABASE_URL'] %>
